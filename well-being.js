@@ -103,36 +103,43 @@ function ready(error, states, carto) {
     };
   });
 
-  otherConfigs.borderCities = baseConfigs.map(function(d) {
-    return {
-      name: d.name,
-      width: 320,
-      height: 150,
-      scale: 1,
-      offset: [50, 175],
-      fill: d.fill,
-      palette: d.palette,
-      color: d.color,
-      header: true
-    };
-  });
-
-  otherConfigs.safeSouth = baseConfigs
+  otherConfigs.borderCities = baseConfigs
     .filter(function(d) {
-      return ['Safety', 'Income', 'Education'].indexOf(d.name) !== -1;
+      return ["Income", "Safety"].indexOf(d.name) !== -1;
     })
     .map(function(d) {
       return {
         name: d.name,
-        width: 330,
-        height: 270,
-        scale: 1.2,
-        offset: [510, 550],
+        width: 500,
+        height: 200,
+        scale: 1.3,
+        offset: [50, 175],
         fill: d.fill,
         palette: d.palette,
         color: d.color,
         header: true
       };
+    });
+
+  otherConfigs.safeSouth = ['Income', 'Safety', 'Education']
+    .map(function(name) {
+      return baseConfigs
+                .filter(function(d) {
+                  return name == d.name;
+                })
+                .map(function(d) {
+                  return {
+                    name: d.name,
+                    width: 330,
+                    height: 270,
+                    scale: 1.2,
+                    offset: [510, 550],
+                    fill: d.fill,
+                    palette: d.palette,
+                    color: d.color,
+                    header: true
+                  };
+                })[0];
     });
 
   otherConfigs.educationDivide = baseConfigs
@@ -402,17 +409,13 @@ function ready(error, states, carto) {
     var hovered = hoveredMuni(d3.mouse(this));
 
     if (hovered !== undefined) {
-
       var offset = config.offset,
           scale = config.scale;
 
-      var left = window.innerWidth - event.pageX < 500 ?
-                    event.pageX - 500 :
-                    event.pageX + 60;
+      var left = d3.event.clientX +
+            (window.innerWidth - d3.event.clientX > 300 ? 60 : -300);
 
-      var top = event.clientY < 250 ?
-                  event.pageY + 60 :
-                  event.pageY - 240;
+      var top = d3.event.clientY - 240;
 
       tooltip
         .style('display', 'inline')
@@ -424,6 +427,7 @@ function ready(error, states, carto) {
         .text(hovered.name.muni);
       tooltip.select('.population')
         .text("    (pop. " + d3.format("0,000")(hovered.population) + ")");
+
 
       makeBarChart(tooltip.select('svg').select('g'), hovered, carto);
 
