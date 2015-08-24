@@ -31,7 +31,7 @@
         <span style="color: rgb(126, 56, 116); font-weight: bold;">health</span>,
         <span style="color: rgb(25, 126, 191); font-weight: bold;">jobs</span> and
         <span style="color: rgb(96, 96, 96); font-weight: bold;">safety</span>.
-        The higher the index the better. The darker the color the higher the index.
+        The higher the index the better. The darker the color, the higher the index.
         In the case of the
         <span style="color: rgb(30, 162, 226); font-weight: bold;">income</span>
         index, a municipality whose residents have high incomes will be colored
@@ -42,7 +42,11 @@
       <p>
         You can see the data sources and how the well-being indexes were
         calculated here:
-        <a href="https://github.com/armollica/scattered-well-being/blob/gh-pages/index-calculation.md">Well-Being Index Calculation</a>
+        <a href="https://github.com/armollica/scattered-well-being/blob/gh-pages/index-calculation.md" target="_blank">Well-Being Index Calculation</a>
+      </p>
+      <p>
+        Scroll down for more focused looks at specific
+        regions of Mexico.
       </p>
 
       <h2>How can I interact with the graphic?</h2>
@@ -88,36 +92,109 @@
       <div>20</div>
       <div>40</div>
       <div>60</div>
-      <div>80<span>th</span> percentile</div>
+      <div>80<span class="super">th</span> percentile</div>
     </div>
     <div class="legend-header">
       <h4>Select a well-being index:</h4>
       <span class="info-button">READ ME</span>
     </div>
+    <svg class="legend-population" width="150" height="300">
+      <rect x="10" y="0" width="20.5" height="20.5"></rect>
+      <text x="40" y="0" dy="15">1,500,000</text>
+
+      <rect x="13.45" y="29" width="13.6" height="13.6"></rect>
+      <text x="40" y="29" dy="12">500,000</text>
+
+      <rect x="17" y="50" width="6.5" height="6.5"></rect>
+      <text x="40" y="50" dy="9">50,000</text>
+
+      <rect x="18.05" y="69" width="4.4" height="4.4"></rect>
+      <text x="40" y="69" dy="8">10,000 people</text>
+    </svg>
   </div>
 
-  <div class="mexico-city">
-    <h2>Mexico City</h2>
+  <h2>Case studies:</h2>
+  <p style="margin: 0 40px 50px 40px; font-style: italic;">
+    Look in depth at the well-being measures for specific regions of Mexico.
+  </p>
+
+  <div class="case-study mexico-city">
+    <h3>Mexico City</h3>
+    <p>
+      The capital city (officially known as the Distrito Federal) is the most
+      densily populated area in Mexico. Mexico City ranks highly in most of the
+      well-being measures. If you move you mouse over the darkest color for each
+      map, you can see that most of the municipalities in Mexico City rank
+      in the 80<span class="super">th</span> percentile.
+    </p>
+    <p>
+      There is one exception &mdash; safety.
+      Most municipalities in Mexico City are below average &mdash; often in the
+      40<span class="th">th</span> percentile or lower.
+    </p>
     <div class="map-container"></div>
   </div>
 
-  <div class="guadalajara">
-    <h2>Guadalajara</h2>
+  <div class="case-study guadalajara">
+    <h3>Guadalajara</h3>
+    <p>
+      The capital of Jalisco, Guadalajara and its surrounding metro area
+      comprise the second largest city of Mexico. Like Mexico City
+      Guadalajara ranks highly in most well-being measures. Unlike Mexico City,
+      however, Guadalajara ranks more favorably in the safety ranking. Most
+      of the municipalities are in the
+      40<span class="super">th</span>-60<span class="super">th</span> percentile.
+    </p>
+    <p>
+      The entire state of Jalisco ranks quite highly in education, even outside
+      of Guadalajara. If you cursor over many of the smaller municipalities to
+      the south of Guadalajara you can see that many rank in the
+      90<span class="super">th</span> percentile or better.
+    </p>
     <div class="map-container"></div>
   </div>
 
-  <div class="border-cities">
-    <h2>The Border Cities</h2>
+  <div class="case-study border-cities">
+    <h3>The Border Cities</h3>
+    <p>
+      The border cities of Tijuana and Juárez (the two largest squares below) are
+      among the highest ranking municipalities in terms of income and jobs.
+      This is likely due in part to their close proximity to the United States.
+    </p>
+    <p>
+      The trade-off for any potential job-seekers planning to move to the area
+      is safety. Both municipalities rank among the lowest in terms of safety
+      due to the high rates of murder and sexual offense in the area.
+    </p>
     <div class="map-container"></div>
   </div>
 
-  <div class="safe-south">
-    <h2>The Safe South</h2>
+  <div class="case-study safe-south">
+    <h3>The Safe South</h3>
+    <p>
+      Despite ranking relatively poorly in terms of income and education, the
+      southern states of Oaxaca, Tlaxcala and Puebla are among to safest
+      according to this measure of safety.
+    </p>
     <div class="map-container"></div>
   </div>
 
-  <div class="education-divide">
-    <h2>The Education Divide</h2>
+  <div class="case-study education-divide">
+    <h3>The Education Divide</h3>
+    <p>
+      Looking at these maps you get the sense that many of the differences
+      in the well-being indexes can be explained by whether an area is urban
+      or rural.
+    </p>
+    <p>
+      Here appears to be one exception. In terms of education there is a clear
+      divide along the border between the high ranking areas of Jalisco
+      (left side of map) and the low ranking area of Michoacán de Ocampo
+      (middle of map).
+    </p>
+    <p>
+      Looking at the jobs index, we see no similar division along state boundaries.
+    </p>
     <div class="map-container"></div>
   </div>
 
