@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Scattered Well-Being</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="main-container">
+  <div class="intro">
+    <h1>
+      <span style="color: rgb(92, 81, 81)">S</span><span style="color: rgb(176, 141, 141)">c</span><span style="color: rgb(137, 108, 108)">a</span><span style="color: rgb(92, 81, 81)">t</span><span style="color: rgb(176, 141, 141)">t</span><span style="color: rgb(176, 141, 141)">e</span><span style="color: rgb(137, 108, 108)">r</span><span style="color: rgb(137, 108, 108)">e</span><span style="color: rgb(176, 141, 141)">d</span>
+      <span style="color: rgb(30, 162, 226)">W</span><span style="color: rgb(30, 162, 226)">e</span><span style="color: rgb(127, 173, 62)">l</span><span style="color: rgb(127, 173, 62)">l</span><span style="color: rgb(51, 165, 148)">-</span><span style="color: rgb(51, 165, 148)">B</span><span style="color: rgb(126, 56, 116)">e</span><span style="color: rgb(126, 56, 116)">i</span><span style="color: rgb(96, 96, 96)">n</span><span style="color: rgb(96, 96, 96)">g</span>
+    </h1>
+    <p class="subtitle">
+      Explore how well-being varies across Mexico
+    </p>
+
+    <div class="info">
+      <div class="close">x</div>
+      <h2>How do I read the graphic?</h2>
+      <p>
+        This is a data-distorted map of Mexico. Each square is a different.
+        municipality. Bigger squares are municipalities with larger populations.
+      </p>
+      <p>
+        There are six well-being indexes:
+        <span style="color: rgb(30, 162, 226); font-weight: bold;">income</span>,
+        <span style="color: rgb(127, 173, 62); font-weight: bold;">education</span>,
+        <span style="color: rgb(51, 165, 148); font-weight: bold;">housing</span>,
+        <span style="color: rgb(126, 56, 116); font-weight: bold;">health</span>,
+        <span style="color: rgb(25, 126, 191); font-weight: bold;">jobs</span> and
+        <span style="color: rgb(96, 96, 96); font-weight: bold;">safety</span>.
+        The higher the index the better. The darker the color the higher the index.
+        In the case of the
+        <span style="color: rgb(30, 162, 226); font-weight: bold;">income</span>
+        index, a municipality whose residents have high incomes will be colored
+        <span style="background-color: rgb(28, 107, 145); color: white; font-weight: bold; padding: 1px 3px; border-radius: 5px;">dark&#8239;blue</span>
+        and those with low incomes will be colored
+        <span style="background-color: rgb(222, 232, 237); color: rgb(24, 24, 24); font-weight: bold; padding: 1px 3px; border-radius: 5px;">light&#8239;blue</span>.
+      </p>
+      <p>
+        You can see the data sources and how the well-being indexes were
+        calculated here:
+        <a href="https://github.com/armollica/scattered-well-being/blob/gh-pages/index-calculation.md">Well-Being Index Calculation</a>
+      </p>
+
+      <h2>How can I interact with the graphic?</h2>
+
+      <h4>Focus on a municipality:</h4>
+      <p>
+        Move your cursor over a square to see the information on a specific
+        municipality. The bar chart shows how the municipality ranks in relation
+        to all other municipalities. When a bar goes to the left it means the
+        municipality is "below average" and when it goes to the right it is
+        "above average". (the center is actually the median, not the mean). If a municipality has a well-being index that is greater
+        than 90% of all other municipalities there will be a plus sign
+        (<span style="font-weight: bold;">+</span>) at the end.
+        Similarly, a minus sign (<span style="font-weight: bold;">-</span>)
+        indicates the municipality has an index lower than 90% of all others.
+      </p>
+
+      <h4>Change the well-being index:</h4>
+      <p>
+        To change the well-being index that's displayed, click on the corresponding
+        index on the legend to the right. The graphic starts out with
+        the <span style="color: rgb(30, 162, 226); font-weight: bold;">income</span>
+        index displayed.
+      </p>
+
+      <h4>Filter the municipalities:</h4>
+      <p>
+        Move your cursor over the different colors on the legend will limit the
+        municipalities displayed to those that are in the hovered index and
+        quantile. For example, if you hover over the
+        <span style="background-color: rgb(92, 81, 81); color: white; font-weight: bold; padding: 1px 3px; border-radius: 5px;">dark grey</span>
+        box on the far right of the
+        <span style="color: rgb(96, 96, 96); font-weight: bold;">safety</span>
+        row, you will only see municipalities with high safety indexes.
+      </p>
+
+    </div>
+  </div>
+
+  <div class="explore">
+    <div class="map-container"></div>
+    <div class="ticks">
+      <div>20</div>
+      <div>40</div>
+      <div>60</div>
+      <div>80<span>th</span> percentile</div>
+    </div>
+    <div class="legend-header">
+      <h4>Select a well-being index:</h4>
+      <span class="info-button">READ ME</span>
+    </div>
+  </div>
+
+  <div class="mexico-city">
+    <h2>Mexico City</h2>
+    <div class="map-container"></div>
+  </div>
+
+  <div class="guadalajara">
+    <h2>Guadalajara</h2>
+    <div class="map-container"></div>
+  </div>
+
+  <div class="border-cities">
+    <h2>The Border Cities</h2>
+    <div class="map-container"></div>
+  </div>
+
+  <div class="safe-south">
+    <h2>The Safe South</h2>
+    <div class="map-container"></div>
+  </div>
+
+  <div class="education-divide">
+    <h2>The Education Divide</h2>
+    <div class="map-container"></div>
+  </div>
+
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.js" charset="utf-8"></script>
+<script src="http://d3js.org/queue.v1.min.js"></script>
+<script src="well-being.js"></script>
+</body>
+</html>

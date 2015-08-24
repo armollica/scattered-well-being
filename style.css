@@ -1,0 +1,203 @@
+body {
+  font-family: sans-serif;
+  width: 1024px;
+  margin: auto;
+}
+
+.main-container {
+  width: 1024px;
+  margin: auto;
+}
+
+.intro {
+  margin-left: 20px;
+  margin-bottom: 25px;
+}
+
+.intro h1 {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.intro .subtitle {
+  margin-top: 8px;
+  margin-left: 50px;
+  font-size: 18px;
+  font-style: italic;
+  color: rgb(96, 96, 96);
+}
+
+.intro .info {
+  display: none;
+  background-color: white;
+  width: 550px;
+  position: absolute;
+  margin-left: 50px;
+  z-index: 3;
+  padding: 20px 83px 30px 60px;
+  box-shadow: 1px 1px 6px #888888;
+}
+
+.intro .info.active {
+  display: block;
+}
+
+.intro .info h4 {
+  padding: 0 30px;
+  margin-bottom: 4px;
+}
+
+.intro .info p {
+  margin: 13px 0;
+  padding-left: 50px;
+}
+
+.intro .info .close {
+  font-size: 16px;
+  font-weight: bold;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  position: relative;
+  top: 7px;
+  left: 585px;
+  cursor: pointer;
+}
+
+.tooltip {
+  padding-left: 20px;
+  width: 400px;
+  box-shadow: 3px 3px 5px #888888;
+  background-color: rgba(255, 255, 255, .93);
+  display: none;
+  position: absolute;
+  z-index: 2;
+}
+
+.tooltip ul {
+  padding-left: 0;
+  list-style-type: none;
+  font-size: 11px;
+  position: absolute;
+}
+
+.tooltip .state {
+  font-size: 15px;
+}
+.tooltip .muni {
+  padding-left: 10px;
+}
+.tooltip .population {
+  padding-left: 20px;
+}
+
+.tooltip .map {
+  margin: 0;
+  fill: none;
+  stroke: black;
+  stroke-width: .5;
+}
+
+.highlight {
+  fill: rgb(255, 61, 0);
+}
+
+.map {
+  cursor: crosshair;
+  margin-right: 10px;
+  stroke-width: 2px;
+}
+
+.map-container h2 {
+  font-size: 1.3em;
+  margin-bottom: 2px;
+}
+
+.explore .map-container {
+  margin-top: 20px;
+}
+
+.explore .legend-header {
+  width: 400px;
+  position: relative;
+  bottom: 609px;
+  left: 615px;
+}
+
+.explore .legend-header h4 {
+  display: inline-block;
+}
+
+.explore .legend-header .info-button {
+  font-size: 13px;
+  font-weight: bold;
+  font-style: normal;
+  background-color: steelblue;
+  color: aliceblue;
+  border-radius: 5px;
+  padding: 5px 7px;
+  cursor: default;
+  position: relative;
+  left: 48px;
+  bottom: 5px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.explore .legend-header .info-button.active {
+  background-color: lightslategrey;
+  color: white;
+}
+
+.explore .legend {
+  width: 370px;
+  height: 132px;
+  position: relative;
+  bottom: 620px;
+  left: 600px;
+}
+
+.explore .row {
+  height: 20px
+  margin-bottom: 2px;
+  width: 100%;
+}
+
+.explore .legend .title {
+  position: relative;
+  right: 5px;
+  bottom: 3px;
+  display: inline-block;
+  text-align: right;
+  font-size: 16px;
+  width: 30%;
+  height: 20px;
+  cursor: pointer;
+}
+
+
+.explore .legend .rect {
+  width: 13%;
+  height: 20px;
+  cursor: pointer;
+}
+
+.explore .ticks {
+  width: 300px;
+  height: 20px;
+  position: relative;
+  bottom: 386px;
+  left: 752px;
+}
+.explore .ticks div {
+  font-size: 13px;
+  display: inline-block;
+  white-space: nowrap;
+  width: 14.4%;
+  height: 20px;
+}
+.explore .ticks span {
+  font-size: 10px;
+  position: relative;
+  bottom: 2px;
+}
