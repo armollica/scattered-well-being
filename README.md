@@ -1,6 +1,6 @@
 # Scattered Well-Being
 
-Entry for OECD Visualization Contest
+Entry for OECD's [Data Visualization Contest 2015 - Visualizing Well-being](http://www.webcosi.eu/web-cosi-news/data-visualization-contest-2015-visualizing-well-being/)
 
 [Winner](http://www.webcosi.eu/web-cosi-news/data-visualization-competition-2015-winning-entries-announced/)
 for best interactive data visualization.
