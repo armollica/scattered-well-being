@@ -56,9 +56,10 @@ tooltip.append("svg")
 queue()
   .defer(d3.json, "states.json")
   .defer(d3.json, "data.json")
+  .defer(d3.json, "annotation.json")
   .await(ready);
 
-function ready(error, states, carto) {
+function ready(error, states, carto, annotationData) {
   if (error) throw error;
 
   data = carto.map;
@@ -243,16 +244,23 @@ function ready(error, states, carto) {
     var map = selection.append('div')
       .style('display', 'inline-block');
 
-    var mousemove = function(d) {
+   
+    config.map = appendMap(map, config);
+    
+    config.annotations = config.map.select("svg").append("g")
+      .attr("class", "annotations")
+      .call(drawAnnotation, annotationData);
+    
+     var mousemove = function(d) {
       return mousemove_map.call(this, [config], d);
     };
     var mouseleave = function(d) {
       return mouseleave_map.call(this, [config], d);
     };
-    config.map = appendMap(map, config);
     config.map.select('svg')
       .on('mousemove', mousemove)
       .on('mouseleave', mouseleave);
+    
 
     var legend = d3.select('.explore').append('div')
       .attr('class', 'legend');
@@ -369,6 +377,31 @@ function ready(error, states, carto) {
           .on('mousemove', mousemove)
           .on('mouseleave', mouseleave);
       }
+      
+      function drawAnnotation(selection, annotationData) {
+        var labels = selection.selectAll(".label")
+            .data(annotationData.labels)
+          .enter().append("text")
+            .attr("class", function(d) { return "label " + d.class; })
+            .attr("x", function(d) { return d.x; })
+            .attr("y", function(d) { return d.y; })
+            .attr("text-anchor", function(d) { return d.anchor; })
+            .attr("dy", function(d) { return d.dy; })
+            .text(function(d) { return d.text; });
+            
+        var lines = selection.selectAll(".line")
+            .data(annotationData.lines)
+          .enter().append("path")
+            .attr("class", "line")
+            .attr("d", d3.svg.line());
+            
+        var circles = selection.selectAll("circle")
+            .data(annotationData.circles)
+          .enter().append("circle")
+            .attr("cx", function(d) { return d.cx; })
+            .attr("cy", function(d) { return d.cy; })
+            .attr("r", function(d) { return d.r; });
+      }
   }
 
   function mouseenter_legend(configs, hovered) {
@@ -415,7 +448,7 @@ function ready(error, states, carto) {
       var left = d3.event.clientX +
             (window.innerWidth - d3.event.clientX > 300 ? 60 : -300);
 
-      var top = d3.event.clientY - 240;
+      var top = (d3.event.clientY - 240) < 0 ? 0 : (d3.event.clientY - 240);
 
       tooltip
         .style('display', 'inline')
@@ -455,7 +488,7 @@ function ready(error, states, carto) {
         hover.exit().remove();
       });
     }
-
+    
     function hoveredMuni(coords) {
       var x = coords[0],
           y = coords[1],

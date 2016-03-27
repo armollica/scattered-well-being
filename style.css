@@ -230,3 +230,33 @@ span.super {
   position: relative;
   bottom: 2px;
 }
+
+.annotations .label {
+  font-size: 18px;
+  fill: black;
+  text-shadow:
+   -1px -1px 0 #fff,  
+    1px -1px 0 #fff,
+    -1px 1px 0 #fff,
+     1px 1px 0 #fff;
+}
+
+.annotations .label.large { font-size: 24px; }
+.annotations .label.medium { font-size: 18px; }
+.annotations .label.small { font-size: 14px; }
+
+.annotations .line {
+  fill: none;
+  stroke: black;
+  stroke-width: 1px;
+}
+
+.annotations circle {
+  fill: none;
+  stroke: black;
+  stroke-width: 1px;
+}
+
+.hidden {
+  display: none;
+}

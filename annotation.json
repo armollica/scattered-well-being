@@ -1,0 +1,53 @@
+{
+  "labels": [
+    {
+      "text": "Mexico City",
+      "x": 426, "y": 555,
+      "anchor": "end", "class": "large", "dy": "5px"
+    },
+    {
+      "text": "Guadalajara",
+      "x": 275, "y": 415,
+      "anchor": "end", "class": "medium", "dy": "4px"
+    },
+    {
+      "text": "Monterrey",
+      "x": 598, "y": 301,
+      "anchor": "start", "class": "medium", "dy": "4px"
+    },
+    {
+      "text": "Juarez",
+      "x": 340, "y": 71,
+      "anchor": "start", "class": "small", "dy": "4px"
+    },
+    {
+      "text": "Leon",
+      "x": 307, "y": 358,
+      "anchor": "end", "class": "small", "dy": "4px" 
+    },
+    {
+      "text": "Puebla",
+      "x": 670, "y": 602,
+      "anchor": "start", "class": "small", "dy": "4px"
+    },
+    {
+      "text": "Cancun",
+      "x": 902, "y": 361,
+      "anchor": "end", "class": "small", "dy": "4px"
+    }
+  ],
+  "lines": [
+    [[431, 555], [451, 555], [470, 530]],
+    [[280, 415], [321, 415]],
+    [[519, 265], [552, 302], [593, 301]],
+    [[301, 51], [320, 71], [335, 71]],
+    [[312, 358], [392, 358], [423, 384]],
+    [[583, 530], [652, 602], [665, 602]],
+    [[907, 361], [920, 361], [933, 380]]
+  ],
+  "circles": [
+    { "cx": 515, "cy": 484, "r": 64 },
+    { "cx": 346, "cy": 415, "r": 25 },
+    { "cx": 496, "cy": 248, "r": 28 }
+  ]
+}
